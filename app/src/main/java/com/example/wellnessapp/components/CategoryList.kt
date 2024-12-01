@@ -24,14 +24,15 @@ import com.example.wellnessapp.R
 @Composable
 fun CategoryList(
     categories: List<String>,
+    selectedCategory: String?,
+    onCategorySelected: (String) -> Unit,  // Callback for category selection
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .background(Color(0xFFFFFFFF)) // Set the desired background color here
+            .background(Color(0xFFFFFFFF))
             .padding(vertical = dimensionResource(R.dimen.padding_small))
-
     ) {
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -40,30 +41,39 @@ fun CategoryList(
             items(categories) { category ->
                 CategoryChip(
                     category = category,
-                    onClick = {  }
+                    isSelected = category == selectedCategory,
+                    onClick = { onCategorySelected(category) }
                 )
             }
         }
     }
 }
 
+
 @Composable
 fun CategoryChip(
     category: String,
+    isSelected: Boolean,  // New parameter to indicate selection
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(16.dp))
-            .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(16.dp)) // Add black outline
-            .background(Color.Transparent) // Set background to transparent if needed
+            .border(
+                1.dp,
+                if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
+                RoundedCornerShape(16.dp)
+            )  // Change border color when selected
+            .background(
+                if (isSelected) MaterialTheme.colorScheme.primary.copy(alpha = 0.1f) else Color.Transparent
+            )  // Change background color when selected
             .clickable { onClick() }
             .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Text(
             text = category,
-            color = MaterialTheme.colorScheme.onSurface, // Set text color to black
+            color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
             style = MaterialTheme.typography.bodySmall
         )
     }

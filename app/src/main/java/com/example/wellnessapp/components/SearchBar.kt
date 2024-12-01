@@ -1,5 +1,6 @@
 package com.example.wellnessapp.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,6 +36,7 @@ fun SearchBar(
         },
         modifier = modifier
             .fillMaxWidth()
+            . background(Color.White) // Set background color to white
             .clip(RoundedCornerShape(24.dp)) // Make the search bar rounded
             .border(
                 width = 1.dp,

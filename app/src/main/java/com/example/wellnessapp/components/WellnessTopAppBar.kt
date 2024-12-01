@@ -1,6 +1,7 @@
 package com.example.wellnessapp.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -27,6 +29,7 @@ fun WellnessTopAppBar(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .padding(dimensionResource(R.dimen.padding_medium))
+            .background(Color(0xFFFFFFFF))
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -49,15 +52,5 @@ fun WellnessTopAppBar(modifier: Modifier = Modifier) {
             )
         }
 
-        Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)))
-
-        // Add the SearchBar below the title
-        SearchBar (
-            query = "",
-            onQueryChange = { /* handle search input */ },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = dimensionResource(R.dimen.padding_small)),
-        )
     }
 }

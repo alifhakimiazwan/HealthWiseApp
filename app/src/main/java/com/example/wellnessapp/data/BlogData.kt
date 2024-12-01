@@ -29,7 +29,7 @@ val blogs = listOf(
         subheading = "Essential core workouts for stability and balance",
         authorName = "Jane Smith",
         publicationDate = "2024-10-05",
-        category = "Fitness",
+        category = "Diets",
         description = "A strong core is fundamental for overall fitness and athletic performance. This blog explores a range of core-strengthening exercises, including planks, Russian twists, and leg raises, designed for both beginners and advanced practitioners. We also discuss the importance of core stability in daily activities and sports, and how a strong core can help prevent injuries. Each exercise is explained in detail, with variations to suit different fitness levels."
     ),
     BlogPost(
@@ -38,7 +38,7 @@ val blogs = listOf(
         subheading = "Top routines to develop powerful legs",
         authorName = "Alice Johnson",
         publicationDate = "2024-10-10",
-        category = "Fitness",
+        category = "Lifestyle",
         description = "Leg day can be daunting, but it's crucial for balanced muscle development and overall strength. In this post, we outline the best leg day routines, including squats, lunges, and deadlifts, along with tips on how to effectively structure your leg workouts. We'll also discuss common mistakes to avoid and how to push through the pain to achieve your fitness goals. Whether you're aiming for muscle growth or endurance, these routines will help you build powerful legs."
     ),
     BlogPost(
